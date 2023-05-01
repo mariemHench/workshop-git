@@ -1,0 +1,84 @@
+PROCEDURE dot_product (v1 : ARRAY, v2:ARRAY,VAR ps:integer)
+var 
+i:integer;
+BEGIN
+   ps := 0
+
+   FOR i FROM 0 TO v1.length STEP step  DO
+     ps += v1[i] * v2[i]
+   END_FOR
+    read(ps)
+END
+
+
+
+
+ALGORITHM DotProduct
+VAR
+    v1[a..b]: ARRAY_OF integer;
+    v2[c..d]:ARRAY_OF integer;
+
+BEGIN
+   write("taper la valeur de a:");
+   read(a);
+    write("taper la valeur de b:");
+   read(b);
+      write("taper la valeur de c:");
+   read(c);
+    write("taper la valeur de d:");
+   read(d);
+
+   FOR i FROM a TO b STEP step  DO
+     FOR j FROM c TO d STEP step  DO
+     dot_product(v1[i], v2[j], ps);
+        IF (ps === 0) THEN
+            read("vecteur orthogonale")
+            
+            ELSE
+            read("n'est pas orthogonale")
+        END_IF
+     END_FOR
+   END_FOR
+END
+
+/* Modify the previous algorithm if you use a dot_product function instead of a procedure */
+
+function dotProduct(v1 : ARRAY, v2:ARRAY,VAR ps:integer):integer
+var
+i:integer;
+BEGIN
+   ps := 0
+
+   FOR i FROM 0 TO v1.length STEP step  DO
+     ps += v1[i] * v2[i]
+   END_FOR
+    read(ps)
+    END
+
+ALGORITHM DotProduct
+VAR
+    v1[a..b]: ARRAY_OF integer;
+    v2[c..d]:ARRAY_OF integer;
+    prd:integer:
+
+BEGIN
+   write("taper la valeur de a:");
+   read(a);
+    write("taper la valeur de b:");
+   read(b);
+      write("taper la valeur de c:");
+   read(c);
+    write("taper la valeur de d:");
+   read(d);
+
+   FOR i FROM a TO b STEP step  DO
+     FOR j FROM c TO d STEP step  DO
+      prd:= dot_product(v1[i],v2[j],ps);
+        IF (prd === 0) THEN
+            read("vecteur orthogonale");
+            ELSE
+            read("n'est pas orthogonale");
+        END_IF
+     END_FOR
+   END_FOR
+END

@@ -1,0 +1,25 @@
+ALGORITHM Phrase
+VAR
+ph: STRING
+nb_voyelles: integer
+c:CHAR
+nb_mot:integer
+   
+BEGIN
+   write("taper une phrase: ")
+   read(ph)
+   nb_mot:=0
+   FOR i FROM 1 TO ph STEP step  DO
+       if ph[i]=" " then 
+        espace:=espace + 1
+        END
+       nb_mot=nb_mot+1
+       if ph[i] in ['a','e','i','y','o','u','A','E','I','Y','O','U'] then
+       nb_voyelles:=nb_voyelles+1
+
+   END_FOR
+
+write("le nombre de mot est :"nb_mot)
+write("le nombre d'espace est :" espace)
+write("le nombre voyelles est :" nb_voyelles)
+END

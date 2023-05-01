@@ -1,0 +1,17 @@
+ALGORITHM  Insertion_sort
+VAR
+   t[i] : ARRAY_OF integer;
+   i:integer;
+j:integer;
+tmp:integer;
+BEGIN
+ FOR i FROM 0 TO n STEP step  DO
+      tmp := t[i]
+   j := i-1;
+    while(j>1 and t[j]>tmp)
+   t[j+1] :=t[i];
+   j :=j-1;
+   END
+   t[j+1] := tmp;
+ END_FOR
+END

@@ -1,0 +1,70 @@
+ALGORITHM Somme_tab
+VAR
+    set1 : ARRAY_OF INTEGER[n];
+    set2 : ARRAY_OF INTEGER[k];
+    sum, i, j, n, k : INTEGER;
+BEGIN
+   read("taper l'element d'un tab set1 :");
+   write(n);
+   read("taper l'element d'un tab set2");
+   write(k)
+   FOR i FROM 1 TO n STEP step  DO
+    write(set1[i])
+ END_FOR
+ FOR j FROM 1 TO k STEP step  DO
+ write(set2[j])
+ END_FOR
+
+   sum :=0
+   FOR i FROM 1 TO n STEP step  DO
+   FOR j FROM 1 TO k STEP step  DO
+   IF (set1[i] <> set2[j]) THEN
+       sum := set1[i]+ set2[j]
+   END_IF
+     END_FOR 
+   END_FOR
+
+END
+
+
+<!--2 eme solution -->
+ALGORITHM Somme_tab
+VAR
+    htab: HASH_TABLE<INTEGER>;
+      set1 : ARRAY_OF INTEGER[n];
+    set2 : ARRAY_OF INTEGER[k];
+    count : INTEGER:=1
+
+BEGIN
+   read("taper l'element d'un tab set1 :");
+   write(n);
+   read("taper l'element d'un tab set2");
+   write(k)
+
+   sum :=0
+    FOR i FROM 1 TO n STEP step  DO
+    htab.insert(<set1[i], count>)
+   FOR j FROM 1 TO k STEP step  DO
+   
+   IF (htab.lookup(set2[j])===true ) THEN
+     count := htab.get(set2[j]);
+           htab.insert(set2[j],count+1);
+       ELSE
+           htab.insert(set2[j],1);
+ 
+   break;
+       
+   END_IF
+ set_key:=dict_getkeys();
+ FOR i FROM 0 TO set_key.length-1 STEP step  DO
+  IF (dict.get(set_keys[i]=1)) THEN
+  sum :=sum+set_key[i];
+  END_IF
+ END_FOR
+
+
+     sum := set1[i]+set2[j];
+   write("la somme est : "sum)
+
+
+END
