@@ -19,7 +19,7 @@ BEGIN
 
    END_FOR
 
-write("le nombre de mot est :"nb_mot)
-write("le nombre d'espace est :" espace)
-write("le nombre voyelles est :" nb_voyelles)
+write("voici le nombre de mot  :"nb_mot)
+write("voici le nombre d'espace  :" espace)
+write("voici le nombre voyelles  :" nb_voyelles)
 END
